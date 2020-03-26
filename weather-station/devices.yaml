@@ -1,0 +1,30 @@
+resourceType: DeviceTree
+resources:
+  - attributes:
+      - attributeTags: {}
+        dataType: number
+        name: dew-point
+      - attributeTags: {}
+        dataType: number
+        name: feels-like
+      - attributeTags: {}
+        dataType: number
+        name: humidity
+      - attributeTags: {}
+        dataType: number
+        name: pressure
+      - attributeTags: {}
+        dataType: number
+        name: temp
+      - attributeTags: {}
+        dataType: number
+        name: visibility
+      - attributeTags: {}
+        dataType: number
+        name: wind-speed
+    children: []
+    deviceClass: standalone
+    id: ~losant-device-weather-0~
+    name: Weather
+    tags: []
+version: 1

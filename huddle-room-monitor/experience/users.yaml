@@ -1,0 +1,19 @@
+resourceType: ExperienceUser
+resources:
+  - email: employee@example.com
+    password: qwerty123
+    experienceGroupIds: []
+    firstName: John
+    id: ~losant-experienceUser-employeeExampleCom-0~
+    lastName: Smith
+    userTags:
+      role: employee
+  - email: manager@example.com
+    password: qwerty123
+    experienceGroupIds: []
+    firstName: Jane
+    id: ~losant-experienceUser-managerExampleCom-1~
+    lastName: Smith
+    userTags:
+      role: manager
+version: 1

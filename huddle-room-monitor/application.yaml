@@ -1,0 +1,11 @@
+resourceType: Application
+resources:
+  - description: >-
+      Provides real-time availability and historical occupancy data for
+      corporate huddle rooms.
+    filesPath: ./files
+    globals: []
+    id: ~losant-application-huddleRoomMonitor-0~
+    name: Huddle Room Monitor
+    readmePath: ./README.md
+version: 1

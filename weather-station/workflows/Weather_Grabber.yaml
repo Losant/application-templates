@@ -1,0 +1,161 @@
+resourceType: Flow
+resources:
+  - description: >-
+      Periodically requests weather data from the Dark Sky API and stores the
+      result on a device.
+    flowClass: cloud
+    globals: []
+    id: ~losant-flow-weatherGrabber-0~
+    name: Weather Grabber
+    nodes:
+      - config:
+          authCredentials: {}
+          authType: none
+          caCertTemplate: ''
+          disableSSLVerification: false
+          encodingTemplate: utf8
+          errorBehavior: throw
+          errorPath: ''
+          headerInfo: []
+          method: GET
+          requestEncodingTemplate: utf8
+          responsePath: working.weather
+          timeoutTemplate: ''
+          uriTemplate: >-
+            https://api.darksky.net/forecast/{{globals.dark_sky_api_key}}/{{globals.gps_location}}
+        id: CSTa-u6aQ7
+        meta:
+          category: data
+          description: ''
+          id: CSTa-u6aQ7
+          label: HTTP
+          name: http
+          x: 180
+          'y': 240
+        outputIds:
+          - - XVgMLKePrL
+        type: HttpNode
+      - config:
+          message: ''
+          property: ''
+        id: Gcz_KvFnVX
+        meta:
+          category: output
+          description: ''
+          id: Gcz_KvFnVX
+          label: Debug
+          name: debug
+          x: 180
+          'y': 700
+        outputIds: []
+        type: DebugNode
+      - config:
+          attrDataMethod: individualFields
+          attrInfos:
+            - key: dew-point
+              valueTemplate: '{{ working.weather.body.currently.dewPoint }}'
+            - key: feels-like
+              valueTemplate: '{{ working.weather.body.currently.apparentTemperature }}'
+            - key: humidity
+              valueTemplate: '{{ working.weather.body.currently.humidity }}'
+            - key: pressure
+              valueTemplate: '{{ working.weather.body.currently.pressure }}'
+            - key: temp
+              valueTemplate: '{{ working.weather.body.currently.temperature }}'
+            - key: visibility
+              valueTemplate: '{{ working.weather.body.currently.visibility }}'
+            - key: wind-speed
+              valueTemplate: '{{ working.weather.body.currently.windSpeed }}'
+          deviceId: ~losant-device-weather-0~
+          deviceIdTemplateType: stringTemplate
+          resultPath: ''
+          timeSourceType: payloadTime
+        id: 4lgTqZzT0M
+        meta:
+          category: output
+          description: ''
+          id: 4lgTqZzT0M
+          label: 'Device: State'
+          name: device-state
+          x: 320
+          'y': 560
+        outputIds:
+          - - Gcz_KvFnVX
+        type: DeviceChangeStateNode
+      - config: {}
+        id: qHZdOUGu6N
+        meta:
+          annotationText: >-
+            Request weather data from the Dark Sky API. The GPS location and
+            Dark Sky API key are stored in application globals.
+          category: annotation
+          height: 140
+          label: Note
+          name: note
+          width: 260
+          x: 380
+          'y': 240
+        outputIds: []
+        type: AnnotationNode
+      - config: {}
+        id: od-hVVrLGH
+        meta:
+          annotationText: 'If the request succeeded, report the weather data as device state.'
+          category: annotation
+          height: 100
+          label: Note
+          name: note
+          width: 260
+          x: 440
+          'y': 420
+        outputIds: []
+        type: AnnotationNode
+      - config:
+          expression: '{{working.weather.statusCode}} === 200'
+        id: XVgMLKePrL
+        meta:
+          category: logic
+          description: ''
+          id: XVgMLKePrL
+          label: Conditional
+          name: conditional
+          x: 180
+          'y': 420
+        outputIds:
+          - - Gcz_KvFnVX
+          - - 4lgTqZzT0M
+        type: ConditionalNode
+    triggers:
+      - config:
+          seconds: 120
+        key: ~losant-flow-weatherGrabber-0~-5pfXZf5nyqEFj1X3UFyBC
+        meta:
+          category: trigger
+          description: ''
+          id: usX5K5X-vU
+          label: Timer
+          name: timer
+          timerTypeSelect: seconds
+          uiId: usX5K5X-vU
+          x: 80
+          'y': 80
+        outputIds:
+          - - CSTa-u6aQ7
+        type: timer
+      - config: {}
+        key: ~losant-flow-weatherGrabber-0~-IwWoDau5gmMKIgE9bAe0i
+        meta:
+          category: trigger
+          description: ''
+          deviceId: null
+          id: '-SKI2EnOoT'
+          label: Virtual Button
+          name: virtualButton
+          payload: ''
+          uiId: '-SKI2EnOoT'
+          x: 280
+          'y': 80
+        outputIds:
+          - - CSTa-u6aQ7
+        type: virtualButton
+version: 1

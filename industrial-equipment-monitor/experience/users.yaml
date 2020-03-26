@@ -1,0 +1,21 @@
+resourceType: ExperienceUser
+resources:
+  - email: kanarra@example.com
+    password: qwerty123
+    experienceGroupIds:
+      - ~losant-experienceGroup-kanarra-0~
+    id: ~losant-experienceUser-kanarraExampleCom-0~
+    userTags: {}
+  - email: sadler-isberg@example.com
+    password: qwerty123
+    experienceGroupIds:
+      - ~losant-experienceGroup-sadlerIsberg-1~
+    id: ~losant-experienceUser-sadlerIsbergExampleCom-1~
+    userTags: {}
+  - email: tekton-health@example.com
+    password: qwerty123
+    experienceGroupIds:
+      - ~losant-experienceGroup-tektonHealth-2~
+    id: ~losant-experienceUser-tektonHealthExampleCom-2~
+    userTags: {}
+version: 1

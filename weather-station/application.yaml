@@ -1,0 +1,23 @@
+resourceType: Application
+resources:
+  - description: >-
+      Requests weather data from an external API to populate a personal weather
+      dashboard.
+    filesPath: ./files
+    globals:
+      - cloudOnly: true
+        description: >-
+          The location (latitude, longitude) that will be used when requesting
+          weather data.
+        json: '"39.108335,-84.509212"'
+        key: gps_location
+      - cloudOnly: true
+        description: >-
+          The Dark Sky API key. Get your key here:
+          https://darksky.net/dev/register
+        json: '"YOUR_DARK_SKY_API_KEY"'
+        key: dark_sky_api_key
+    id: ~losant-application-weatherStation-0~
+    name: Weather Station
+    readmePath: ./README.md
+version: 1

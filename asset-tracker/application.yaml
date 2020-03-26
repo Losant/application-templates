@@ -1,0 +1,11 @@
+resourceType: Application
+resources:
+  - description: >-
+      Monitors real-time geolocation, temperature, and shock for multiple asset
+      tracking devices.
+    filesPath: ./files
+    globals: []
+    id: ~losant-application-assetTracker-0~
+    name: Asset Tracker
+    readmePath: ./README.md
+version: 1
