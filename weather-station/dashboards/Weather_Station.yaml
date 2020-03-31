@@ -14,7 +14,7 @@ resources:
             deviceIds:
               - ~losant-device-weather-0~
             deviceTags: []
-            label: ˚F
+            label: ˚C
         height: 1
         id: PDGdNOrKD_
         startX: 0
@@ -39,7 +39,7 @@ resources:
               expression: ''
               graphType: line
               label: Temperature
-              yAxisLabel: ˚F
+              yAxisLabel: ˚C
             - aggregation: MEAN
               attribute: humidity
               color: '#057180'
@@ -64,7 +64,7 @@ resources:
         blockType: gauge
         config:
           displayAsPercentage: true
-          gaugeMax: '1'
+          gaugeMax: '100'
           gaugeMin: '0'
           gaugeType: dial
           precision: 4
@@ -116,7 +116,7 @@ resources:
             deviceIds:
               - ~losant-device-weather-0~
             deviceTags: []
-            label: mph
+            label: meters/sec
         height: 1
         id: MlfAkaaAe3
         startX: 0
@@ -152,7 +152,7 @@ resources:
         blockType: gauge
         config:
           gaugeType: number
-          precision: '2'
+          precision: '0'
           precisionType: floating
           realTime: false
           segment:
@@ -161,7 +161,7 @@ resources:
             deviceIds:
               - ~losant-device-weather-0~
             deviceTags: []
-            label: miles
+            label: meters
         height: 1
         id: kBWn3__mLZ
         startX: 3
@@ -176,17 +176,17 @@ resources:
           precisionType: floating
           realTime: false
           segment:
-            attribute: dew-point
+            attribute: feels-like
             color: '#8db319'
             deviceIds:
               - ~losant-device-weather-0~
             deviceTags: []
-            label: ˚F
+            label: ˚C
         height: 1
         id: SF7YlMteY3
         startX: 3
         startY: 3
-        title: Dew Point
+        title: Feels Like
         width: 1
     contextConfiguration: []
     defaultTheme: light

@@ -3,24 +3,27 @@ resources:
   - attributes:
       - attributeTags: {}
         dataType: number
-        name: dew-point
-      - attributeTags: {}
-        dataType: number
+        description: ''
         name: feels-like
       - attributeTags: {}
         dataType: number
+        description: ''
         name: humidity
       - attributeTags: {}
         dataType: number
+        description: ''
         name: pressure
       - attributeTags: {}
         dataType: number
+        description: ''
         name: temp
       - attributeTags: {}
         dataType: number
+        description: ''
         name: visibility
       - attributeTags: {}
         dataType: number
+        description: ''
         name: wind-speed
     children: []
     deviceClass: standalone

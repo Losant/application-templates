@@ -13,10 +13,10 @@ resources:
         key: gps_location
       - cloudOnly: true
         description: >-
-          The Dark Sky API key. Get your key here:
-          https://darksky.net/dev/register
-        json: '"YOUR_DARK_SKY_API_KEY"'
-        key: dark_sky_api_key
+          The OpenWeatherMap API key. Get your key here:
+          https://openweathermap.org/api
+        json: '"YOUR_API_KEY"'
+        key: api_key
     id: ~losant-application-weatherStation-0~
     name: Weather Station
     readmePath: ./README.md

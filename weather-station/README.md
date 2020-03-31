@@ -4,11 +4,11 @@ This template provides a complete implementation of the [Losant Walkthrough](htt
 ## Setup
 1. Navigate to your [Application Globals](https://app.losant.com/applications/~losant-application-weatherStation-0~/globals) and configure the following fields:
 	1. `gps_location`—Location (latitude, longitude) that will be used when requesting weather data.
-	1. `dark_sky_api_key`—Dark Sky API key. [Dark Sky](https://darksky.net/dev) is a separate, paid service, that you'll have to sign up for (one key per company). With this key, the first 1,000 forecasts per day are free, which is enough for this application.
+	1. `api_key`—OpenWeatherMap API key. [OpenWeatherMap](https://openweathermap.org/api) is a separate, paid service, that you'll have to sign up for. They do provide a free tier, which provides plenty of resources for this application.
 2. Enable the [Weather Grabber](https://app.losant.com/applications/~losant-application-weatherStation-0~/workflows/~losant-flow-weatherGrabber-0~/develop) workflow.
 
 ## Weather Grabber Workflow
-The [Weather Grabber](https://app.losant.com/applications/~losant-application-weatherStation-0~/workflows/~losant-flow-weatherGrabber-0~/develop) workflow has a timer that runs every two minutes to request weather data from the Dark Sky API. It uses the API key and location that you configured above.
+The [Weather Grabber](https://app.losant.com/applications/~losant-application-weatherStation-0~/workflows/~losant-flow-weatherGrabber-0~/develop) workflow has a timer that runs every two minutes to request weather data from the OpenWeatherMap API. It uses the API key and location that you configured above.
 
 ## Weather Station Dashboard
 The [Weather Station](https://app.losant.com/dashboards/~losant-dashboard-weatherStation-0~) dashboard displays a variety of live and historical weather data. This data is displayed from the [Weather](https://app.losant.com/applications/~losant-application-weatherStation-0~/devices/~losant-device-weather-0~) device, which is updated by the Weather Grabber workflow.
