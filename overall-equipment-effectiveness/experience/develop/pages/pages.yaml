@@ -1,0 +1,28 @@
+resourceType: ExperienceView
+resources:
+  - description: >-
+      Users who are not logged in will be redirected to this page when they try
+      to visit the home page. This is a simple login form; when the user submits
+      the form, it will hit the POST /login endpoint with the email and password
+      submitted by the user. If the credentials are valid, the user will get an
+      authentication cookie and will be redirected to the Home page.
+    id: ~losant-experienceView-logIn-4~
+    layoutId: ~losant-experienceView-exampleLayout-3~
+    localFilename: ./Log_In.hbs
+    name: Log In
+    version: develop
+    viewTags: {}
+    viewType: page
+  - description: >-
+      Here is an example home page, which renders only for logged-in users.
+      Within the endpoint that renders this template, we redirect to the Login
+      page if the experience user is not logged in. This page renders within
+      your Example Layout at the position of the {{ page }} tag.
+    id: ~losant-experienceView-homePage-5~
+    layoutId: ~losant-experienceView-exampleLayout-3~
+    localFilename: ./Home_Page.hbs
+    name: Home Page
+    version: develop
+    viewTags: {}
+    viewType: page
+version: 1

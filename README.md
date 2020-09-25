@@ -33,6 +33,9 @@ The [Asset Tracker Template](https://docs.losant.com/templates/asset-tracker) mo
 ### 4. Huddle Room Monitor
 The [Huddle Room Monitor Template](https://docs.losant.com/templates/huddle-room-monitor) provides real-time availability and historical occupancy data for corporate huddle rooms.
 
+### 5. Overall Equipment Effectiveness (OEE)
+The [Overall Equipment Effectiveness Template](https://docs.losant.com/templates/overall-equipment-effectiveness) provides OEE calculations and dashboards for simulated paper machines.
+
 ## Partner Templates
 Templates also provide our partners with a seamless method to onboard shared customers. If you'd like to explore partner template options, please [Contact Us](https://www.losant.com/custom-application-template).
 

@@ -1,0 +1,11 @@
+resourceType: ExperienceGroupTree
+resources:
+  - children: []
+    description: An example user group
+    deviceIds: []
+    deviceTags: []
+    groupTags: {}
+    id: ~losant-experienceGroup-myExampleGroup-0~
+    name: My Example Group
+    parentId: null
+version: 1

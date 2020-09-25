@@ -1,0 +1,281 @@
+resourceType: DeviceTree
+resources:
+  - attributes:
+      - attributeTags: {}
+        dataType: string
+        description: 'Running, Planned, Unplanned, Sheetbreak'
+        name: status
+      - attributeTags: {}
+        dataType: number
+        description: time at current status
+        name: count
+      - attributeTags: {}
+        dataType: number
+        description: time to be met to change current status
+        name: time
+      - attributeTags: {}
+        dataType: string
+        description: in-depth description of the status
+        name: reason
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Sheetbreak
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Running
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Unplanned
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Planned
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: sku
+      - attributeTags: {}
+        dataType: number
+        description: 'SKU tons/minute '
+        name: rate
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons created within quality
+        name: tons
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons created that aren't sent on
+        name: waste
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons to be created
+        name: order
+      - attributeTags: {}
+        dataType: number
+        description: SKU - rate of trim
+        name: trim
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL quality
+        name: totalTons
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: totalWaste
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: totalTrim
+      - attributeTags: {}
+        dataType: number
+        description: actual run time of sku
+        name: skutime
+      - attributeTags: {}
+        dataType: number
+        description: SKU
+        name: sheetbreakTons
+      - attributeTags: {}
+        dataType: number
+        description: SKU trim waste
+        name: trimTons
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: sheetbreakTotal
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: skuRunTime
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Availability
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Quality
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Performance
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: OEE
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: monthlyRate
+      - attributeTags: {}
+        dataType: number
+        description: tons created each pass through simulation - used for summation for OEE
+        name: currentTons
+      - attributeTags: {}
+        dataType: number
+        description: >-
+          waste created each pass through simulation - used for summation for
+          OEE
+        name: currentWaste
+    children: []
+    description: A unique paper machine creating toilet paper.
+    deviceClass: standalone
+    id: ~losant-device-paperMachine1-0~
+    name: Paper Machine 1
+    tags:
+      - key: type
+        value: papermachine
+      - key: sku
+        value: '2'
+      - key: order
+        value: 16200 tons
+      - key: scheduledTime
+        value: 810 min
+      - key: maxRate
+        value: '23'
+      - key: location
+        value: '39.1031, -84.5120'
+      - key: DeviceRecipe
+        value: Paper Machine
+  - attributes:
+      - attributeTags: {}
+        dataType: string
+        description: ''
+        name: status
+      - attributeTags: {}
+        dataType: number
+        description: time at current status
+        name: count
+      - attributeTags: {}
+        dataType: number
+        description: time to be met to change current status
+        name: time
+      - attributeTags: {}
+        dataType: string
+        description: ''
+        name: reason
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Sheetbreak
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Running
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Unplanned
+      - attributeTags: {}
+        dataType: boolean
+        description: ''
+        name: Planned
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: sku
+      - attributeTags: {}
+        dataType: number
+        description: 'SKU tons/minute '
+        name: rate
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons created within quality
+        name: tons
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons created that aren't sent on
+        name: waste
+      - attributeTags: {}
+        dataType: number
+        description: SKU tons to be created
+        name: order
+      - attributeTags: {}
+        dataType: number
+        description: SKU - rate of trim
+        name: trim
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL quality
+        name: totalTons
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: totalWaste
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: totalTrim
+      - attributeTags: {}
+        dataType: number
+        description: actual run time of sku
+        name: skutime
+      - attributeTags: {}
+        dataType: number
+        description: SKU
+        name: sheetbreakTons
+      - attributeTags: {}
+        dataType: number
+        description: SKU trim waste
+        name: trimTons
+      - attributeTags: {}
+        dataType: number
+        description: OVERALL
+        name: sheetbreakTotal
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: skuRunTime
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Availability
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Quality
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: Performance
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: monthlyRate
+      - attributeTags: {}
+        dataType: number
+        description: ''
+        name: OEE
+      - attributeTags: {}
+        dataType: number
+        description: tons created each pass through simulation - used for summation for OEE
+        name: currentTons
+      - attributeTags: {}
+        dataType: number
+        description: >-
+          waste created each pass through simulation - used for summation for
+          OEE
+        name: currentWaste
+    children: []
+    description: A unique paper machine creating toilet paper.
+    deviceClass: standalone
+    id: ~losant-device-paperMachine2-1~
+    name: Paper Machine 2
+    tags:
+      - key: type
+        value: papermachine
+      - key: sku
+        value: '2'
+      - key: order
+        value: 16200 tons
+      - key: scheduledTime
+        value: 810 min
+      - key: maxRate
+        value: '23'
+      - key: location
+        value: '39.1031, -84.5120'
+      - key: DeviceRecipe
+        value: Paper Machine
+version: 1
