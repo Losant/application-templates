@@ -6,6 +6,6 @@ resources:
     filesPath: ./files
     globals: []
     id: ~losant-application-applicationOverallEquipmentEffectivenessOee-0~
-    name: Application / Overall Equipment Effectiveness (OEE)
+    name: Overall Equipment Effectiveness (OEE)
     readmePath: ./README.md
 version: 1
