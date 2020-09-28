@@ -183,7 +183,7 @@ resources:
               deviceTags: []
               expression: '{{value}}/60000'
               label: Incorrect Web Tension
-          valueFormat: ''
+          valueFormat: ',.4'
         height: 1
         id: Hm7hB9OKfc
         startX: 3
@@ -349,7 +349,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Planned
+              attribute: planned
               color: 'rgba(5, 113, 128, 1)'
               cumulative: false
               detectDataGaps: false
@@ -369,7 +369,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Running
+              attribute: running
               color: 'rgba(141, 179, 25, 1)'
               cumulative: false
               detectDataGaps: false
@@ -389,7 +389,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Sheetbreak
+              attribute: sheetbreak
               color: 'rgba(10, 225, 255, 1)'
               cumulative: false
               detectDataGaps: false
@@ -409,7 +409,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Unplanned
+              attribute: unplanned
               color: 'rgba(255, 154, 37, 1)'
               cumulative: false
               detectDataGaps: false
@@ -461,7 +461,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: OEE
+              attribute: oee
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
@@ -484,7 +484,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Availability
+              attribute: availability
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
@@ -506,7 +506,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Quality
+              attribute: quality
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
@@ -523,7 +523,7 @@ resources:
           defaultCondition:
             color: 'rgba(255, 255, 255, 0)'
             label: >+
-              ### Sku: {{value-0}}  
+              ### SKU: {{value-0}}  
 
               ___
 
@@ -651,7 +651,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: skutime
+              attribute: skuTime
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
@@ -680,7 +680,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Performance
+              attribute: performance
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
@@ -701,7 +701,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Availability
+              attribute: availability
               color: '#ff261b'
               cumulative: false
               detectDataGaps: false
@@ -721,7 +721,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Quality
+              attribute: quality
               color: '#057180'
               cumulative: false
               detectDataGaps: false
@@ -741,7 +741,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: Performance
+              attribute: performance
               color: '#0ae1ff'
               cumulative: false
               detectDataGaps: false
@@ -761,7 +761,7 @@ resources:
             - aggregation:
                 options: {}
                 type: LAST
-              attribute: OEE
+              attribute: oee
               color: 'rgba(130, 91, 255, 1)'
               cumulative: false
               detectDataGaps: false
@@ -876,7 +876,7 @@ resources:
         id: AJERO2HORx
         startX: 0
         startY: 4.5
-        title: 'Current Production Sku [24 hrs]'
+        title: 'Current Production SKU [24 hrs]'
         width: 2
       - applicationId: ~losant-application-applicationOverallEquipmentEffectivenessOee-0~
         blockType: section-header
@@ -957,7 +957,7 @@ resources:
               deviceTags: []
               expression: '{{value}}/60000'
               label: Drive Failure
-          valueFormat: ''
+          valueFormat: ',.5'
         height: 1
         id: Y8_hfJysJc
         startX: 3
@@ -1054,7 +1054,7 @@ resources:
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
-              expression: '{{value}}/3600000'
+              expression: '{{value}}/60000'
               label: Scheduled Maintenance
             - aggregation:
                 options:
@@ -1065,20 +1065,20 @@ resources:
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
-              expression: '{{value}}/3600000'
+              expression: '{{value}}/60000'
               label: Planned Utility Shutdown
             - aggregation:
                 options:
-                  value: Sku Change
+                  value: SKU Change
                 type: TIMEATVALUE
               attribute: reason
               color: 'rgba(229, 229, 59, 1)'
               deviceIds:
                 - '{{ctx.deviceId-0}}'
               deviceTags: []
-              expression: '{{value}}/3600000'
-              label: Sku Change
-          valueFormat: ''
+              expression: '{{value}}/60000'
+              label: SKU Change
+          valueFormat: ',.5'
         height: 1
         id: yC7gRDs0Gz
         startX: 1
@@ -1092,7 +1092,7 @@ resources:
           defaultCondition:
             color: 'rgba(255, 255, 255, 0)'
             label: >
-              #### Sku Change:  {{format (divide value-0 3600000) '0.2f'}} hours
+              #### SKU Change:  {{format (divide value-0 3600000) '0.2f'}} hours
 
               #### Scheduled Maintenance: {{format (divide value-1 3600000)
               '0.2f'}} hours 
@@ -1108,7 +1108,7 @@ resources:
           segments:
             - aggregation:
                 options:
-                  value: Sku Change
+                  value: SKU Change
                 type: TIMEATVALUE
               attribute: reason
               deviceIds:

@@ -511,13 +511,13 @@ resources:
       - config:
           attrDataMethod: individualFields
           attrInfos:
-            - key: Availability
+            - key: availability
               valueTemplate: '{{working.oee.availability.percentage}}'
-            - key: OEE
+            - key: oee
               valueTemplate: '{{working.oee.percentage}}'
-            - key: Performance
+            - key: performance
               valueTemplate: '{{working.oee.performance.percentage}}'
-            - key: Quality
+            - key: quality
               valueTemplate: '{{working.oee.quality.percentage}}'
           deviceId: working.deviceLoop.value.deviceId
           deviceIdTemplateType: jsonPath
@@ -541,8 +541,8 @@ resources:
         meta:
           annotationText: >-
             This loops through every device that was pulled in the previous
-            device:get node.  It will then go through and calculate OEE and it's
-            properties (Availability, Performance, and Quality) for each
+            Device: Get node.  It will then go through and calculate OEE and
+            it's properties (Availability, Performance, and Quality) for each
             device. 
           category: annotation
           height: 120
@@ -558,7 +558,7 @@ resources:
         meta:
           annotationText: >-
             This Workflow calculates the OEE every hour but it can be manually
-            triggered by hitting the virtual button.
+            triggered by hitting the Virtual Button.
           category: annotation
           height: 100
           label: Note

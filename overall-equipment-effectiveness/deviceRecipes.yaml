@@ -3,87 +3,69 @@ resources:
   - attributes:
       - attributeTags: {}
         dataType: string
-        description: ''
+        description: >-
+          Paper machine status states: Running, Planned, Unplanned, or
+          Sheetbreak.
         name: status
       - attributeTags: {}
         dataType: number
-        description: time at current status
+        description: Time at current status.
         name: count
       - attributeTags: {}
         dataType: number
-        description: time to be met to change current status
+        description: Time to be met to change current status.
         name: time
       - attributeTags: {}
         dataType: string
-        description: ''
+        description: In-depth description of the status.
         name: reason
-      - attributeTags: {}
-        dataType: boolean
-        description: ''
-        name: Sheetbreak
-      - attributeTags: {}
-        dataType: boolean
-        description: ''
-        name: Running
-      - attributeTags: {}
-        dataType: boolean
-        description: ''
-        name: Unplanned
-      - attributeTags: {}
-        dataType: boolean
-        description: ''
-        name: Planned
       - attributeTags: {}
         dataType: number
         description: ''
         name: sku
       - attributeTags: {}
         dataType: number
-        description: 'SKU tons/minute '
+        description: SKU specific - tons/minute.
         name: rate
       - attributeTags: {}
         dataType: number
-        description: SKU tons created within quality
+        description: SKU specific - tons created within quality.
         name: tons
       - attributeTags: {}
         dataType: number
-        description: SKU tons created that aren't sent on
+        description: SKU specific - tons created that aren't sent on.
         name: waste
       - attributeTags: {}
         dataType: number
-        description: SKU tons to be created
+        description: SKU specific - tons to be created.
         name: order
       - attributeTags: {}
         dataType: number
-        description: SKU - rate of trim
+        description: SKU specific - rate of trim.
         name: trim
       - attributeTags: {}
         dataType: number
-        description: OVERALL quality
+        description: Overall quality- unrelated to the SKU production.
         name: totalTons
       - attributeTags: {}
         dataType: number
-        description: OVERALL
+        description: Overall - unrelated to the SKU production.
         name: totalWaste
       - attributeTags: {}
         dataType: number
-        description: OVERALL
+        description: Overall - unrelated to the SKU production.
         name: totalTrim
       - attributeTags: {}
         dataType: number
-        description: actual run time of sku
-        name: skutime
-      - attributeTags: {}
-        dataType: number
-        description: SKU
+        description: SKU specific - tons created during sheetbreak.
         name: sheetbreakTons
       - attributeTags: {}
         dataType: number
-        description: SKU trim waste
+        description: SKU specific - trim waste.
         name: trimTons
       - attributeTags: {}
         dataType: number
-        description: OVERALL
+        description: Overall - unrelated to the SKU production.
         name: sheetbreakTotal
       - attributeTags: {}
         dataType: number
@@ -92,35 +74,58 @@ resources:
       - attributeTags: {}
         dataType: number
         description: ''
-        name: Availability
-      - attributeTags: {}
-        dataType: number
-        description: ''
-        name: Quality
-      - attributeTags: {}
-        dataType: number
-        description: ''
-        name: Performance
-      - attributeTags: {}
-        dataType: number
-        description: ''
-        name: OEE
-      - attributeTags: {}
-        dataType: number
-        description: ''
         name: monthlyRate
       - attributeTags: {}
         dataType: number
-        description: tons created each pass through simulation - used for summation for OEE
+        description: >-
+          Tons created each pass through simulation - used for summation for
+          OEE.
         name: currentTons
       - attributeTags: {}
         dataType: number
         description: >-
-          waste created each pass through simulation - used for summation for
-          OEE
+          Waste created each pass through simulation - used for summation for
+          OEE.
         name: currentWaste
+      - attributeTags: {}
+        dataType: boolean
+        description: 'True: if machine state is currently sheetbreak.'
+        name: sheetbreak
+      - attributeTags: {}
+        dataType: boolean
+        description: 'True: if machine state is currently running.'
+        name: running
+      - attributeTags: {}
+        dataType: boolean
+        description: 'True: if machine state is currently unplanned downtime.'
+        name: unplanned
+      - attributeTags: {}
+        dataType: boolean
+        description: 'True: if machine state is currently planned downtime.'
+        name: planned
+      - attributeTags: {}
+        dataType: number
+        description: Actual run time of SKU.
+        name: skuTime
+      - attributeTags: {}
+        dataType: number
+        description: Metric of OEE - found using OEE Calculation Workflow.
+        name: availability
+      - attributeTags: {}
+        dataType: number
+        description: Metric of OEE - found using OEE Calculation Workflow.
+        name: performance
+      - attributeTags: {}
+        dataType: number
+        description: Metric of OEE - found using OEE Calculation Workflow.
+        name: quality
+      - attributeTags: {}
+        dataType: number
+        description: Overall OEE - found using OEE Calculation Workflow.
+        name: oee
+    description: ''
     deviceClass: standalone
-    deviceDescription: ''
+    deviceDescription: A unique paper machine creating toilet paper.
     deviceName: 'Paper Machine #'
     id: ~losant-deviceRecipe-paperMachine-0~
     name: Paper Machine

@@ -53,7 +53,7 @@ resources:
           - - PtrFb9GkSL
         type: LoopNode
       - config:
-          max: 100
+          max: 190
           min: 0
           resultPath: working.status.random
         id: '-ax0vpAwb7'
@@ -97,7 +97,7 @@ resources:
           label: Unplanned
           name: debug
           x: 760
-          'y': 3260
+          'y': 3300
         outputIds:
           - - TaD85YNvUr
         type: DebugNode
@@ -260,15 +260,15 @@ resources:
               valueTemplate: '{{working.status.current}}'
             - key: count
               valueTemplate: '{{working.data.out.count}}'
-            - key: Sheetbreak
+            - key: sheetbreak
               valueTemplate: '{{working.data.graph.sheetbreak}}'
-            - key: Planned
+            - key: planned
               valueTemplate: '{{working.data.graph.planned}}'
-            - key: Unplanned
+            - key: unplanned
               valueTemplate: '{{working.data.graph.unplanned}}'
-            - key: Running
+            - key: running
               valueTemplate: '{{working.data.graph.running}}'
-            - key: skutime
+            - key: skuTime
               valueTemplate: '{{working.sku.out.time}}'
             - key: monthlyRate
               valueTemplate: '{{working.monthlyRate.value}}'
@@ -302,7 +302,7 @@ resources:
           label: Random Time
           name: random-number
           x: 820
-          'y': 2580
+          'y': 2620
         outputIds:
           - - Ab1aya6e-P
         type: RandomNumberNode
@@ -344,11 +344,10 @@ resources:
           rules:
             - destination: working.planned.reason
               type: set
-              valueTemplate: Sku Change
+              valueTemplate: SKU Change
             - destination: working.planned.time
               type: set
               valueTemplate: '180'
-              valueTemplateType: json
             - destination: working.data.out.count
               type: set
               valueTemplate: '0'
@@ -423,13 +422,13 @@ resources:
               valueTemplate: '{{working.data.out.count}}'
             - key: time
               valueTemplate: '{{working.planned.time}}'
-            - key: Sheetbreak
+            - key: sheetbreak
               valueTemplate: '{{working.data.graph.sheetbreak}}'
-            - key: Planned
+            - key: planned
               valueTemplate: '{{working.data.graph.planned}}'
-            - key: Unplanned
+            - key: unplanned
               valueTemplate: '{{working.data.graph.unplanned}}'
-            - key: Running
+            - key: running
               valueTemplate: '{{working.data.graph.running}}'
             - key: rate
               valueTemplate: '{{working.sku.rate}}'
@@ -443,7 +442,7 @@ resources:
               valueTemplate: '{{working.sku.trim}}'
             - key: sku
               valueTemplate: '{{working.sku.value}}'
-            - key: skutime
+            - key: skuTime
               valueTemplate: '{{working.sku.out.time}}'
             - key: sheetbreakTons
               valueTemplate: '{{working.sku.out.sheetbreak}}'
@@ -487,7 +486,7 @@ resources:
           label: Reason
           name: random-number
           x: 820
-          'y': 2680
+          'y': 2720
         outputIds:
           - - Y7XyV0Q9PP
         type: RandomNumberNode
@@ -512,7 +511,7 @@ resources:
           label: Unplanned Reason
           name: switch
           x: 820
-          'y': 2780
+          'y': 2820
         outputIds:
           - - '-9QCuARJex'
           - - yH7E-4mcc8
@@ -530,15 +529,15 @@ resources:
               valueTemplate: '{{working.data.out.count}}'
             - key: time
               valueTemplate: '{{working.unplanned.time}}'
-            - key: Sheetbreak
+            - key: sheetbreak
               valueTemplate: '{{working.data.graph.sheetbreak}}'
-            - key: Planned
+            - key: planned
               valueTemplate: '{{working.data.graph.planned}}'
-            - key: Unplanned
+            - key: unplanned
               valueTemplate: '{{working.data.graph.unplanned}}'
-            - key: Running
+            - key: running
               valueTemplate: '{{working.data.graph.running}}'
-            - key: skutime
+            - key: skuTime
               valueTemplate: '{{working.sku.out.time}}'
             - key: montlyRate
               valueTemplate: '{{working.monthlyRate.value}}'
@@ -559,7 +558,7 @@ resources:
           label: 'Device: State'
           name: device-state
           x: 760
-          'y': 3160
+          'y': 3200
         outputIds:
           - - R5IxZOFqKx
         type: DeviceChangeStateNode
@@ -577,7 +576,7 @@ resources:
           label: Mutate
           name: mutate
           x: 460
-          'y': 3020
+          'y': 3060
         outputIds:
           - - fZjV8aZY2G
         type: MutateNode
@@ -595,7 +594,7 @@ resources:
           label: Mutate
           name: mutate
           x: 1060
-          'y': 3020
+          'y': 3060
         outputIds:
           - - fZjV8aZY2G
         type: MutateNode
@@ -613,7 +612,7 @@ resources:
           label: Mutate
           name: mutate
           x: 1260
-          'y': 3020
+          'y': 3060
         outputIds:
           - - fZjV8aZY2G
         type: MutateNode
@@ -628,7 +627,7 @@ resources:
           label: Conditional
           name: conditional
           x: 760
-          'y': 2920
+          'y': 2960
         outputIds:
           - - ZmQPjRjmol
           - - mLr6vvppvB
@@ -647,7 +646,7 @@ resources:
           label: Mutate
           name: mutate
           x: 660
-          'y': 3020
+          'y': 3060
         outputIds:
           - - fZjV8aZY2G
         type: MutateNode
@@ -665,7 +664,7 @@ resources:
           label: Mutate
           name: mutate
           x: 860
-          'y': 3020
+          'y': 3060
         outputIds:
           - - fZjV8aZY2G
         type: MutateNode
@@ -680,15 +679,15 @@ resources:
               valueTemplate: '{{working.running.time}}'
             - key: reason
               valueTemplate: '{{working.status.current}}'
-            - key: Sheetbreak
+            - key: sheetbreak
               valueTemplate: '{{working.data.graph.sheetbreak}}'
-            - key: Planned
+            - key: planned
               valueTemplate: '{{working.data.graph.planned}}'
-            - key: Unplanned
+            - key: unplanned
               valueTemplate: '{{working.data.graph.unplanned}}'
-            - key: Running
+            - key: running
               valueTemplate: '{{working.data.graph.running}}'
-            - key: skutime
+            - key: skuTime
               valueTemplate: '{{working.sku.out.time}}'
             - key: monthlyRate
               valueTemplate: '{{working.monthlyRate.value}}'
@@ -725,16 +724,16 @@ resources:
               valueTemplate: '{{working.device.value.compositeState.status.value}}'
             - destination: working.data.in.state.planned
               type: set
-              valueTemplate: '{{working.device.value.compositeState.Planned.value}}'
+              valueTemplate: '{{working.device.value.compositeState.planned.value}}'
             - destination: working.data.in.state.unplanned
               type: set
-              valueTemplate: '{{working.device.value.compositeState.Unplanned.value}}'
+              valueTemplate: '{{working.device.value.compositeState.unplanned.value}}'
             - destination: working.data.in.state.running
               type: set
-              valueTemplate: '{{working.device.value.compositeState.Running.value}}'
+              valueTemplate: '{{working.device.value.compositeState.running.value}}'
             - destination: working.data.in.state.sheetbreak
               type: set
-              valueTemplate: '{{working.device.value.compositeState.Sheetbreak.value}}'
+              valueTemplate: '{{working.device.value.compositeState.sheetbreak.value}}'
             - destination: working.sku.order
               type: set
               valueTemplate: '{{working.device.value.compositeState.order.value}}'
@@ -764,7 +763,7 @@ resources:
               valueTemplate: '{{working.device.value.compositeState.totalWaste.value}}'
             - destination: working.sku.in.time
               type: set
-              valueTemplate: '{{working.device.value.compositeState.skutime.value}}'
+              valueTemplate: '{{working.device.value.compositeState.skuTime.value}}'
             - destination: working.time.reset
               type: set
               valueTemplate: '{{working.device.value.compositeState.resetTime.value}}'
@@ -806,7 +805,7 @@ resources:
           x: 940
           'y': 600
         outputIds:
-          - - DE1PEddN0N
+          - - WncrDGw6Zq
           - - ch9Pro88eB
         type: ConditionalNode
       - config:
@@ -855,14 +854,14 @@ resources:
           attrInfos:
             - key: count
               valueTemplate: '{{working.data.out.count}}'
-            - key: Running
-              valueTemplate: '{{working.device.value.compositeState.Running.value}}'
-            - key: Planned
-              valueTemplate: '{{working.device.value.compositeState.Planned.value}}'
-            - key: Unplanned
-              valueTemplate: '{{working.device.value.compositeState.Unplanned.value}}'
-            - key: Sheetbreak
-              valueTemplate: '{{working.device.value.compositeState.Sheetbreak.value}}'
+            - key: running
+              valueTemplate: '{{working.data.in.state.running}}'
+            - key: planned
+              valueTemplate: '{{working.data.in.state.planned}}'
+            - key: unplanned
+              valueTemplate: '{{working.data.in.state.unplanned}}'
+            - key: sheetbreak
+              valueTemplate: '{{working.data.in.state.sheetbreak}}'
             - key: tons
               valueTemplate: '{{working.sku.out.tons}}'
             - key: waste
@@ -881,7 +880,7 @@ resources:
               valueTemplate: '{{working.total.out.tons}}'
             - key: trim
               valueTemplate: '{{working.sku.trim}}'
-            - key: skutime
+            - key: skuTime
               valueTemplate: '{{working.sku.out.time}}'
             - key: sheetbreakTotal
               valueTemplate: '{{working.total.out.sheetbreak}}'
@@ -917,9 +916,6 @@ resources:
             - destination: working.data.out.count
               type: set
               valueTemplate: '0'
-            - destination: working.sku.out.time
-              type: set
-              valueTemplate: '{{working.sku.in.time}}+1'
         id: DE1PEddN0N
         meta:
           category: logic
@@ -989,7 +985,7 @@ resources:
           label: Status Update
           name: mutate
           x: 820
-          'y': 2480
+          'y': 2520
         outputIds:
           - - qNHBz2reEN
         type: MutateNode
@@ -1049,7 +1045,7 @@ resources:
           label: Status Update
           name: mutate
           x: 420
-          'y': 1940
+          'y': 1960
         outputIds:
           - - DKVmbjwrbw
         type: MutateNode
@@ -1084,7 +1080,7 @@ resources:
           'y': 920
         outputIds:
           - - NTAcHtiPsS
-          - - p71doypk5a
+          - - bPXYYiDzWI
         type: ConditionalNode
       - config:
           max: 10
@@ -1337,7 +1333,8 @@ resources:
               valueTemplate: '{{working.sku.order}} tons'
             - keyTemplate: scheduledTime
               valueTemplate: '{{working.sku.scheduledTime}} min'
-          idTemplate: 5eb0581c8dead300075f8557
+          gatewayIdTemplate: ''
+          idTemplate: '{{working.device.value.deviceId}}'
           nameTemplate: ''
           parentIdTemplate: ''
           resultPath: ''
@@ -1355,23 +1352,6 @@ resources:
         outputIds:
           - - UqGUXJ4o9L
         type: UpdateDeviceNode
-      - config:
-          max: 2
-          min: 0
-          resultPath: working.brandchange
-        id: p71doypk5a
-        meta:
-          category: logic
-          description: ''
-          groupId: ZYR4WqJ3yy
-          id: FqxVaYULur
-          label: Brand Change
-          name: random-number
-          x: 2160
-          'y': 1120
-        outputIds:
-          - - ZyUwxle0p-
-        type: RandomNumberNode
       - config:
           expression: '{{working.brandchange}} === 1'
         id: UqGUXJ4o9L
@@ -1392,11 +1372,10 @@ resources:
           rules:
             - destination: working.planned.reason
               type: set
-              valueTemplate: Sku Change
+              valueTemplate: SKU Change
             - destination: working.planned.time
               type: set
               valueTemplate: '20'
-              valueTemplateType: json
             - destination: working.data.out.count
               type: set
               valueTemplate: '0'
@@ -1513,7 +1492,7 @@ resources:
           label: Next
           name: loop-next
           x: 760
-          'y': 3360
+          'y': 3400
         outputIds: []
         type: LoopCapNode
       - config:
@@ -1603,7 +1582,7 @@ resources:
         id: ulJ9ulYlpv
         meta:
           annotationText: >-
-            The timer runs the simulation every minute. The virtual button
+            The timer runs the simulation every minute. The Virtual Button
             allows for the workflow to be triggered manually during testing
             phases of the simulation set up.
           category: annotation
@@ -1753,7 +1732,8 @@ resources:
         meta:
           annotationText: >-
             A random number is selected between 65 and 140 which determines the
-            length of the downtime event.  
+            length of the downtime event. This is used in the Device: State node
+            below and updates the attribute **time**. 
 
 
             Another random number is created between 1 and 4 and that is then
@@ -1762,7 +1742,7 @@ resources:
 
             * 1 - Yankee Hood Temp Out of Range
 
-            * 2 - Issue with the headbox, if the time is below 100minutes 
+            * 2 - Issue with the headbox, if the time is below 100 minutes 
                 * Time <= 100 - Quick Mix Level Low
                 * Time > 100 - Water Quality out of Spec
             * 3 - Boiler Shut Down
@@ -1770,12 +1750,12 @@ resources:
             * 4 - Drive Failure
           category: annotation
           groupId: ZYR4WqJ3yy
-          height: 320
+          height: 340
           label: Note
           name: note
           width: 400
           x: 400
-          'y': 2500
+          'y': 2520
         outputIds: []
         type: AnnotationNode
       - config: {}
@@ -1898,7 +1878,7 @@ resources:
         outputIds: []
         type: AnnotationNode
       - config:
-          expression: '{{working.device.value.compositeState.tons.value}}>=0'
+          expression: '{{working.device.value.compositeState.tons.value}} === undefined'
         id: PtrFb9GkSL
         meta:
           category: logic
@@ -1910,8 +1890,8 @@ resources:
           x: 1520
           'y': 180
         outputIds:
-          - - p71doypk5a
           - - jbhk422Hzq
+          - - uz4mTz4XVp
         type: ConditionalNode
       - config: {}
         id: tEL306yRAC
@@ -1933,6 +1913,58 @@ resources:
           'y': 180
         outputIds: []
         type: AnnotationNode
+      - config:
+          statements:
+            - expression: '{{working.sku.in.time}}+1'
+              resultPath: working.sku.out.time
+        id: WncrDGw6Zq
+        meta:
+          category: logic
+          description: ''
+          groupId: ZYR4WqJ3yy
+          id: WncrDGw6Zq
+          label: Update skuTime
+          name: math
+          x: 900
+          'y': 1240
+        outputIds:
+          - - DE1PEddN0N
+        type: MathNode
+      - config:
+          rules:
+            - destination: working.brandchange
+              type: set
+              valueTemplate: '2'
+        id: uz4mTz4XVp
+        meta:
+          category: logic
+          description: ''
+          groupId: ZYR4WqJ3yy
+          id: Vs7xEEGekH
+          label: Brand Change
+          name: mutate
+          x: 2160
+          'y': 920
+        outputIds:
+          - - ZyUwxle0p-
+        type: MutateNode
+      - config:
+          max: 2
+          min: 0
+          resultPath: working.brandchange
+        id: bPXYYiDzWI
+        meta:
+          category: logic
+          description: ''
+          groupId: ZYR4WqJ3yy
+          id: FqxVaYULur
+          label: Brand Change
+          name: random-number
+          x: 2040
+          'y': 1060
+        outputIds:
+          - - ZyUwxle0p-
+        type: RandomNumberNode
     triggers:
       - config:
           seconds: 60

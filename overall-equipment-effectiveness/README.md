@@ -7,17 +7,17 @@ This template provides a sample implementation of OEE measurements for a set of 
 This is a tool to help guide your thinking when you go to implement OEE in your own unique solution. It utilizes features of Losant that can be used to perform the OEE calculations.
 
 ## Setup
-Enable the [Paper Machine Data Simulator](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-paperMachineDataSimulator-0~/develop) workflow.  
-Enable the [OEE Calculations](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-oeeCalculations-1~/develop) workflow.
+1. Enable the [Paper Machine Data Simulator](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-paperMachineDataSimulator-0~/develop) workflow.  
+2. Enable the [OEE Calculations](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-oeeCalculations-1~/develop) workflow.
 
 ## Dashboards
-This template includes one dashboard: an OEE overview of a single paper machine. The dashboard is built with [context variables](https://docs.losant.com/dashboards/context-variables/) to allow the user to switch between the different paper machine devices.
+This template includes [one dashboard](https://app.losant.com/dashboards/~losant-dashboard-paperMachine-0~): an OEE overview of a single paper machine. The dashboard is built with [context variables](https://docs.losant.com/dashboards/context-variables/) to allow the user to switch between the different paper machine devices. This template calculates OEE every hour, so OEE calculations will not appear on the dashboard until one hour has elapsed.
 
 ## OEE Calculation
-This template includes an [OEE Calculations](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-oeeCalculations-1~/develop) workflow which will calculate the three parts of OEE over the last 30 days and save the results on device attributes.
+This template includes an [OEE Calculations](/applications/~losant-application-applicationOverallEquipmentEffectivenessOee-0~/workflows/~losant-flow-oeeCalculations-1~/develop) workflow, which will calculate the three parts of OEE over the last 30 days and save the results on device attributes.
 
 ### Availability 
-Availability is calculated using a 30 day [Time At Value](https://docs.losant.com/references/aggregations/#time-at-value) aggregation of the paper machine's **status** and **reason** [string attributes](https://docs.losant.com/devices/attributes/#strings).
+Availability is calculated using a 30-day [Time At Value](https://docs.losant.com/references/aggregations/#time-at-value) aggregation of the paper machine's **status** and **reason** [string attributes](https://docs.losant.com/devices/attributes/#strings).
 
 ```
 (Running + Planned + Unplanned + Sheetbreak) = totalTime  
@@ -25,17 +25,17 @@ Availability is calculated using a 30 day [Time At Value](https://docs.losant.co
 (Running + Sheetbreak)/runTime = Availability
 ```
 
-*Note: Availability will need to take into account the scheduled run time for each specific machine/process. Every process has different ways of calculating scheduled run time. Items that could affect run time include: technician shifts, holidays, or orders coming in. This use case assumes the machine will be running 24/7/365 with the exception of the Utility Outage.*
+*Note: Availability will need to take into account the scheduled run time for each specific machine/process. Every process has different ways of calculating scheduled run time. Items that could affect run time include technician shifts, holidays, or orders coming in. This use case assumes the machine will be running 24/7/365 with the exception of the Utility Outage.*
 
 ### Performance
-Performance is calculated using a 30 day [mean aggregation](https://docs.losant.com/references/aggregations/#mean) of the paper machine's **rate** attribute. It then compares the mean to the **maxRate** for the machine. Max rate is set as a [Device Tag](https://docs.losant.com/devices/overview/#device-tags) since it is a constant value and could vary by machine.
+Performance is calculated using a 30-day [mean aggregation](https://docs.losant.com/references/aggregations/#mean) of the paper machine's **rate** attribute. It then compares the mean to the **maxRate** for the machine. Max rate is set as a [Device Tag](https://docs.losant.com/devices/overview/#device-tags) since it is a constant value and could vary by machine.
 
 ```
 rate/maxRate = Performance
 ```
 
 ### Quality 
-Quality is calculated using a 30 day [sum aggregation](https://docs.losant.com/references/aggregations/#sum) of the paper machine's **currentTons** and **currentWaste** attributes.
+Quality is calculated using a 30-day [sum aggregation](https://docs.losant.com/references/aggregations/#sum) of the paper machine's **currentTons** and **currentWaste** attributes.
 
 These should be changed to match the good quality (currentTons in this example) and the bad quality (currentWaste in this example) attribute you have for your device.
 
@@ -52,23 +52,23 @@ When the [Paper Machine Data Simulator](/applications/~losant-application-applic
 These paper machines have several different **status** values. The **status** of the machine is a string attribute on each device. The values called out below in italics are the string values that are recorded for each state.
 
 ### *Running*
-If the machine is running, it is only outputting paper of the correct quality, at the machine rate, with a small amount of cut off at the sides to give it a clean edge. The trim is considered waste because it will go into the repulper to be reworked and brought back into the furnish recipe.
+If the machine is running, it is only outputting paper of the correct quality, at the machine rate, with a small amount of cutoff at the sides to give it a clean edge. The trim is considered waste because it will go into the repulper to be reworked and brought back into the furnish recipe.
 
 ### *Planned* Downtime 
 Planned downtime is classified further with a string attribute to give the **reason** behind the downtime event. These are events where the machine went through a controlled shutdown for scheduled maintenance of some kind. These are typically planned in advance. This simulation will have one of two types of planned downtime events:
 
-* **Sku Change**: Sku Changes require some amount of downtime in order to change certain parameters of the machine to meet the recipie guidelines.
-* **Scheduled Maintenance**: Common events that are used for preventative maintenance and machine updates. The correct use of planned downtime should, over time, result in less unplanned downtime events overall.
-* **Utility Outage**: Planned shutdown where the power to the entire facility is shut off for maintenance. Since this would be planned for once a year, the scheduled amount of time for the downtime event would not be on the books for the machine to be running. Thus the time spent in Utility Outage does NOT count against the availability.
+* **SKU Change**: SKU Changes require some amount of downtime in order to change certain parameters of the machine to meet the recipie guidelines.
+* **Scheduled Maintenance**: Common events that are used for preventive maintenance and machine updates. The correct use of planned downtime should, over time, result in fewer unplanned downtime events overall.
+* **Utility Outage**: These are planned shutdowns where the power to the entire facility is shut off for maintenance. Since this would be planned for once a year, the scheduled amount of time for the downtime event would not be on the books for the machine to be running. Thus the time spent in Utility Outage does NOT count against the availability.
 
 ### *Unplanned* Downtime 
 Unplanned downtime is classified further with a string attribute to give the **reason** behind the downtime event. These are events where the machine goes through an automatic shutdown for a quality or safety reason. These events can result in a large amount of downtime and costly damage. This simulation can have unplanned downtime for the following reasons:
 
-* **Yankee Hood Temp Out of Range**: The Yankee Hood is above the Yankee Dryer and the two together are one of the main ways of drying paper on the paper machine. Each SKU, or type of paper, requires the hood to be within a specific temperature range. There are also safety limits for the temperature of the hood. If it goes outside of any of these limits the machine will automatically shut down to protect the technicians, the process, or to prevent excessive amounts of off quality paper.
-* **Quick Mix Level Low**: A quick mix is the tank that holds the mixture of pulps that is set by the recipe for the SKU in production. If the tank gets too low, the machine will shut down because there is not enough furnish mixture to make paper.
+* **Yankee Hood Temp Out of Range**: The Yankee Hood is above the Yankee Dryer and the two together are one of the main ways of drying paper on the paper machine. Each SKU, or type of paper, requires the hood to be within a specific temperature range. There are also safety limits for the temperature of the hood. If it goes outside of any of these limits the machine will automatically shut down to protect the technicians, the process, or to prevent excessive amounts of off-quality paper.
+* **Quick Mix Level Low**: A quick mix is a tank that holds the mixture of pulps that is set by the recipe for the SKU in production. If the tank gets too low, the machine will shut down because there is not enough furnish mixture to make paper.
 * **Water Quality Out of Spec**: Water is one of the main ingredients in the paper-making process. There are multiple inline quality monitoring systems because the water being out of spec can change the chemistry of the chemicals and furnish that come together to create the correct final quality of the paper. 
 * **Boiler Shut Down**: The Yankee Dryer is filled with steam at a specific pressure. Because the paper going over the dryer is one of the main transformations of the paper, it needs to have the correct pressure inside of the roll.
-* **Drive Failure**: Paper machines are made up of many rolls that all have a drive to keep them at the correct speed. These drives fail which causes the machine to shut down to avoid damage.
+* **Drive Failure**: Paper machines are made up of many rolls that all have a drive to keep them at the correct speed. These drives can fail, causing the machine to shut down to avoid damage.
 
 ### *Sheetbreak*
 A sheetbreak occurs while the machine runs. A sheetbreak causes the paper to go into the repulper so that it is not rolled up and sent on. All paper made during a sheetbreak is considered **waste** and is therefore counted against quality. In this simulation, sheetbreaks are classified further with the string attribute **reason** to track major quality issues or focus areas for the technicians.
