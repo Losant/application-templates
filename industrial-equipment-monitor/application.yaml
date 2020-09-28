@@ -1,11 +1,11 @@
 resourceType: Application
 resources:
-  - description: >-
-      A multi-tenant equipment monitoring application with multiple customers
-      and users.
+  - appliedTemplateIds: []
+    blobUrlTTL: 86400
+    description: A multi-tenant equipment monitoring application with multiple customers and users.
     filesPath: ./files
     globals: []
-    id: ~losant-application-industrialEquipmentMonitor-0~
+    id: ~losant-application-applicationIndustrialEquipmentMonitor-0~
     name: Industrial Equipment Monitor
     readmePath: ./README.md
 version: 1

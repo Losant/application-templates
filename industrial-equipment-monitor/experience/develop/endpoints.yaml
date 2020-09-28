@@ -34,6 +34,6 @@ resources:
     staticReply:
       statusCode: 200
       type: page
-      value: ~losant-experienceView-pageLogin-3~
+      value: ~losant-experienceView-pageLogin-1~
     version: develop
 version: 1
