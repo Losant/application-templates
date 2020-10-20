@@ -36,8 +36,8 @@ The [Huddle Room Monitor Template](https://docs.losant.com/templates/huddle-room
 ### 5. Overall Equipment Effectiveness (OEE)
 The [Overall Equipment Effectiveness Template](https://docs.losant.com/templates/overall-equipment-effectiveness) provides OEE calculations and dashboards for simulated paper machines.
 
-### 6. Indoor Asset Tracking
-The [Indoor Asset Tracking Template](https://docs.losant.com/templates/indoor-asset-tracker/) provides a multi-view application that can be used to monitor and locate assets in a physical environment.
+### 6. Indoor Asset Tracker
+The [Indoor Asset Tracker Template](https://docs.losant.com/templates/indoor-asset-tracker/) provides a multi-view application that can be used to monitor and locate assets in a physical environment.
 
 ## Partner Templates
 Templates also provide our partners with a seamless method to onboard shared customers. If you'd like to explore partner template options, please [Contact Us](https://www.losant.com/custom-application-template).
