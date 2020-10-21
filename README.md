@@ -7,6 +7,10 @@ These templates provide a set of real-world reference implementations that you c
 * Implementation best practices.
 * Starting points for your own applications.
 
+## Deprecation Notice
+
+This repository has been deprecated. The templates found in this repository have been moved to the [Losant Templates](https://github.com/Losant/losant-templates) repository.
+
 ## How to Use Losant Application Templates
 
 For all sandbox and enterprise users within Losant's managed cloud environment, these templates will appear directly in the Losant user interface whenever you add a new application.
